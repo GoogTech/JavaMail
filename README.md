@@ -1,2 +1,2 @@
-# JavaMail
-An application for manipulating mail.
+# Java Mail
+:coffee: An application for manipulating mail.
