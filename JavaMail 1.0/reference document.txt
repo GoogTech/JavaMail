@@ -1,6 +1,6 @@
 reference : 
 	1:	http://www.runoob.com/java/java-sending-email.html
-	2:	https://blog.csdn.net/xietansheng/article/details/51673073
+	2:	https://blog.csdn.net/xietansheng/article/details/51673073 + https://blog.csdn.net/xietansheng/article/details/51722660
 	3:	https://www.cnblogs.com/ysocean/p/7666061.html
 	
 Error... Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource..

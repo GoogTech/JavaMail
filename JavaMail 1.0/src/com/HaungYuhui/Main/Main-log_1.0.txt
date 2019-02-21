@@ -1,0 +1,248 @@
+/*############ First-program output be showed as followed : ############
+ 
+ 
+DEBUG: setDebug: JavaMail version 1.6.0
+DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle]
+DEBUG SMTP: useEhlo true, useAuth false
+DEBUG SMTP: trying to connect to host "smtp.qq.com", port 25, isSSL false
+220 smtp.qq.com Esmtp QQ Mail Server
+DEBUG SMTP: connected to host "smtp.qq.com", port: 25
+
+EHLO YU
+250-smtp.qq.com
+250-PIPELINING
+250-SIZE 73400320
+250-STARTTLS
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN
+250-MAILCOMPRESS
+250 8BITMIME
+DEBUG SMTP: Found extension "PIPELINING", arg ""
+DEBUG SMTP: Found extension "SIZE", arg "73400320"
+DEBUG SMTP: Found extension "STARTTLS", arg ""
+DEBUG SMTP: Found extension "AUTH", arg "LOGIN PLAIN"
+DEBUG SMTP: Found extension "AUTH=LOGIN", arg ""
+DEBUG SMTP: Found extension "MAILCOMPRESS", arg ""
+DEBUG SMTP: Found extension "8BITMIME", arg ""
+DEBUG SMTP: protocolConnect login, host=smtp.qq.com, user=3083968068@qq.com, password=<non-null>
+DEBUG SMTP: Attempt to authenticate using mechanisms: LOGIN PLAIN DIGEST-MD5 NTLM XOAUTH2 
+DEBUG SMTP: Using mechanism LOGIN
+DEBUG SMTP: AUTH LOGIN command trace suppressed
+DEBUG SMTP: AUTH LOGIN succeeded
+DEBUG SMTP: use8bit false
+MAIL FROM:<3083968068@qq.com>
+250 Ok
+RCPT TO:<xxxxxx@outlook.com>
+250 Ok
+DEBUG SMTP: Verified Addresses
+DEBUG SMTP:   Program <xxxxxx@outlook.com>
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Date: Wed, 20 Feb 2019 16:11:46 +0800 (CST)
+From: Java Program <3083968068@qq.com>
+To: Program <xxxxxx@outlook.com>
+Message-ID: <2109874862.0.1550650306538@YU>
+Subject: Hi Friend
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Huang Yuhui ! You have received my email successfully.
+.
+250 Ok: queued as 
+DEBUG SMTP: message successfully delivered to mail server
+QUIT
+221 Bye
+Success to send the email to specified user !
+
+*/
+
+
+
+
+
+
+/*############ Second-program output be showed as followed : ############
+
+
+DEBUG: setDebug: JavaMail version 1.6.0
+DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle]
+DEBUG SMTP: useEhlo true, useAuth false
+DEBUG SMTP: trying to connect to host "smtp.qq.com", port 25, isSSL false
+220 smtp.qq.com Esmtp QQ Mail Server
+DEBUG SMTP: connected to host "smtp.qq.com", port: 25
+
+EHLO YU
+250-smtp.qq.com
+250-PIPELINING
+250-SIZE 73400320
+250-STARTTLS
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN
+250-MAILCOMPRESS
+250 8BITMIME
+DEBUG SMTP: Found extension "PIPELINING", arg ""
+DEBUG SMTP: Found extension "SIZE", arg "73400320"
+DEBUG SMTP: Found extension "STARTTLS", arg ""
+DEBUG SMTP: Found extension "AUTH", arg "LOGIN PLAIN"
+DEBUG SMTP: Found extension "AUTH=LOGIN", arg ""
+DEBUG SMTP: Found extension "MAILCOMPRESS", arg ""
+DEBUG SMTP: Found extension "8BITMIME", arg ""
+DEBUG SMTP: protocolConnect login, host=smtp.qq.com, user=3083968068@qq.com, password=<non-null>
+DEBUG SMTP: Attempt to authenticate using mechanisms: LOGIN PLAIN DIGEST-MD5 NTLM XOAUTH2 
+DEBUG SMTP: Using mechanism LOGIN
+DEBUG SMTP: AUTH LOGIN command trace suppressed
+DEBUG SMTP: AUTH LOGIN succeeded
+DEBUG SMTP: use8bit false
+MAIL FROM:<3083968068@qq.com>
+250 Ok
+RCPT TO:<xxxxxx@outlook.com>
+250 Ok
+DEBUG SMTP: Verified Addresses
+DEBUG SMTP:   Program <Gentleman_0109@outlook.com>
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Date: Wed, 20 Feb 2019 16:25:07 +0800 (CST)
+From: Java Program <3083968068@qq.com>
+To: Program <xxxxxx@outlook.com>
+Message-ID: <2109874862.0.1550651107118@YU>
+Subject: Hi Friend
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Huang Yuhui ! You have received my email successfully.
+.
+250 Ok: queued as 
+DEBUG SMTP: message successfully delivered to mail server
+QUIT
+221 Bye
+Success to send the email to specified user !
+
+*/
+
+
+
+
+
+
+/*############ Third-program output be showed as followed : (Success)############
+ 
+ 
+DEBUG: setDebug: JavaMail version 1.6.0
+DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle]
+DEBUG SMTP: useEhlo true, useAuth false
+DEBUG SMTP: trying to connect to host "smtp.qq.com", port 25, isSSL false
+220 smtp.qq.com Esmtp QQ Mail Server
+DEBUG SMTP: connected to host "smtp.qq.com", port: 25
+
+EHLO YU
+250-smtp.qq.com
+250-PIPELINING
+250-SIZE 73400320
+250-STARTTLS
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN
+250-MAILCOMPRESS
+250 8BITMIME
+DEBUG SMTP: Found extension "PIPELINING", arg ""
+DEBUG SMTP: Found extension "SIZE", arg "73400320"
+DEBUG SMTP: Found extension "STARTTLS", arg ""
+DEBUG SMTP: Found extension "AUTH", arg "LOGIN PLAIN"
+DEBUG SMTP: Found extension "AUTH=LOGIN", arg ""
+DEBUG SMTP: Found extension "MAILCOMPRESS", arg ""
+DEBUG SMTP: Found extension "8BITMIME", arg ""
+DEBUG SMTP: protocolConnect login, host=smtp.qq.com, user=3083968068@qq.com, password=<non-null>
+DEBUG SMTP: Attempt to authenticate using mechanisms: LOGIN PLAIN DIGEST-MD5 NTLM XOAUTH2 
+DEBUG SMTP: Using mechanism LOGIN
+DEBUG SMTP: AUTH LOGIN command trace suppressed
+DEBUG SMTP: AUTH LOGIN succeeded
+DEBUG SMTP: use8bit false
+MAIL FROM:<3083968068@qq.com>
+250 Ok
+RCPT TO:<3083968068@qq.com>
+250 Ok
+DEBUG SMTP: Verified Addresses
+DEBUG SMTP:   Program <3083968068@qq.com>
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Date: Wed, 20 Feb 2019 16:35:39 +0800 (CST)
+From: Java Program <3083968068@qq.com>
+To: Program <3083968068@qq.com>
+Message-ID: <2109874862.0.1550651739937@YU>
+Subject: Hi Friend
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Huang Yuhui ! You have received my email successfully.
+.
+250 Ok: queued as 
+DEBUG SMTP: message successfully delivered to mail server
+QUIT
+221 Bye
+Success to send the email to specified user !
+
+*/
+
+
+
+
+
+############ fourth-program output be showed as followed : (Success)############
+
+DEBUG: setDebug: JavaMail version 1.6.0
+DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle]
+DEBUG SMTP: useEhlo true, useAuth false
+DEBUG SMTP: trying to connect to host "smtp.qq.com", port 25, isSSL false
+220 smtp.qq.com Esmtp QQ Mail Server
+DEBUG SMTP: connected to host "smtp.qq.com", port: 25
+
+EHLO YU
+250-smtp.qq.com
+250-PIPELINING
+250-SIZE 73400320
+250-STARTTLS
+250-AUTH LOGIN PLAIN
+250-AUTH=LOGIN
+250-MAILCOMPRESS
+250 8BITMIME
+DEBUG SMTP: Found extension "PIPELINING", arg ""
+DEBUG SMTP: Found extension "SIZE", arg "73400320"
+DEBUG SMTP: Found extension "STARTTLS", arg ""
+DEBUG SMTP: Found extension "AUTH", arg "LOGIN PLAIN"
+DEBUG SMTP: Found extension "AUTH=LOGIN", arg ""
+DEBUG SMTP: Found extension "MAILCOMPRESS", arg ""
+DEBUG SMTP: Found extension "8BITMIME", arg ""
+DEBUG SMTP: protocolConnect login, host=smtp.qq.com, user=3083968068@qq.com, password=<non-null>
+DEBUG SMTP: Attempt to authenticate using mechanisms: LOGIN PLAIN DIGEST-MD5 NTLM XOAUTH2 
+DEBUG SMTP: Using mechanism LOGIN
+DEBUG SMTP: AUTH LOGIN command trace suppressed
+DEBUG SMTP: AUTH LOGIN succeeded
+DEBUG SMTP: use8bit false
+MAIL FROM:<3083968068@qq.com>
+250 Ok
+RCPT TO:<2426844954@qq.com>
+250 Ok
+DEBUG SMTP: Verified Addresses
+DEBUG SMTP:   Program <2426844954@qq.com>
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Date: Wed, 20 Feb 2019 16:54:19 +0800 (CST)
+From: Java Program <3083968068@qq.com>
+To: Program <2426844954@qq.com>
+Message-ID: <2109874862.0.1550652859128@YU>
+Subject: Hi Friend
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Huang Yuhui ! You have received my email successfully.
+.
+250 Ok: queued as 
+DEBUG SMTP: message successfully delivered to mail server
+QUIT
+221 Bye
+
+[ TIP : Success to send the email to specified user ! ]
+
