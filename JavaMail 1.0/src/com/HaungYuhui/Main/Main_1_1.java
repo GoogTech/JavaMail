@@ -15,6 +15,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 
+import com.HuangYuhui.Utils.MailConfig;
 import com.HuangYuhui.Utils.ManipulatingEmail;
 
 /**
@@ -28,71 +29,58 @@ import com.HuangYuhui.Utils.ManipulatingEmail;
  */
 public class Main_1_1
 {
-	/*
-	 * Addresser : email address and password,server address of SMTP.
-	 */
-	public static String myEmailAccount = "3083968068@qq.com";
-	public static String myEmailPassword = "xxxxxx";// Authorization code.//IMAG/SMTP : xxxxxx
-	public static String myEmailSMTPHost = "smtp.qq.com";
+	// Addresser : email address and password,server address of SMTP.
+	final static String MY_EMAIL_STMPHOST = MailConfig.mailConfigInfo.getEmailSMTPHost();
+	final static String MY_EMAIL_ACCOUNT = MailConfig.mailConfigInfo.getUserMailAccount();
+	final static String MY_EMAIL_PASSWORD = MailConfig.mailConfigInfo.getUserMailPassword();// Authorization code.
+	final static String MY_EMAIL_SUBJECT = MailConfig.mailConfigInfo.getEmailSubject();
+	final static String MY_EMAIL_CONTENT = MailConfig.mailConfigInfo.getEmailContent();
+	// Addressee : email address.
+	final static String RECIPIENTS_EMAIL_ACCOUNT = MailConfig.mailConfigInfo.getEmailRecipient(); 
 
-	/*
-	 * Addressee : email address.
+	/**
+	 * @Title Main
+	 * @Description Test the program.
+	 * @return void
+	 * @date Feb 24, 2019-7:56:27 PM
+	 *
 	 */
-	public static String receiveMailAccount = "xxxxxx@qq.com";// Try to send the email to myself.
-
-	// Test the program.
 	public static void main(String[] args) throws MessagingException, IOException
 	{
-		/*
-		 * 1: Create the parameter due to connect the server of email.
-		 */
+		// 1: Create the parameter due to connect the server of email.
 		Properties properties = new Properties();// Set the parameter.
 		properties.setProperty("mail.transport.protocol", "smtp");// standard.
-		properties.setProperty("mail.smtp.host", myEmailSMTPHost);// address about SMTP Server.
+		properties.setProperty("mail.smtp.host", MY_EMAIL_STMPHOST);// address about SMTP Server.
 		properties.setProperty("mail.smtp.auth", "ture");// need to request authentication.
 
-		/*
-		 * 2: Create the session by the setting.(Used to interact with the mail server)
-		 */
+		// 2: Create the session by the setting.(Used to interact with the mail server).
 		Session session = Session.getInstance(properties);
 		session.setDebug(true);// You can view the detailed send log.
 
-		/*
-		 * 3: Create the a email.
-		 */
-		MimeMessage message = createMimeMessage(session, myEmailAccount, receiveMailAccount);
+		// 3: Create the a email.
+		MimeMessage message = createMimeMessage(session, MY_EMAIL_ACCOUNT, RECIPIENTS_EMAIL_ACCOUNT);
 
-		/*
-		 * (optional)Save the email to a local.
-		 */
+		// (optional)Save the email to a local.
 		ManipulatingEmail.saveEmail("MyEmail_1.1.eml", message);
 
-		/*
-		 * 4: Gets the mail transfer object based on the Session.
-		 */
+		// 4: Gets the mail transfer object based on the Session.
 		Transport transport = session.getTransport();
 
-		/*
-		 * 5: (Important step)Connect to the server of email with the email address and
-		 * password.
-		 */
+		// 5: (Important step)Connect to the server of email with the email address and
+		// password.
 		try
 		{
-			transport.connect(myEmailAccount, myEmailPassword);
+			transport.connect(MY_EMAIL_ACCOUNT, MY_EMAIL_PASSWORD);
 		} catch (MessagingException e)
 		{
 			System.err.println("Error : Fail to connect to server of email !\n");
 			e.printStackTrace();
 		}
 
-		/*
-		 * 6: Send the email to the all of Recipients.
-		 */
+		// 6: Send the email to the all of Recipients.
 		transport.sendMessage(message, message.getAllRecipients());
 
-		/*
-		 * 7: Release the resource.
-		 */
+		// 7: Release the resource.
 		transport.close();
 		System.out.println("\n[ TIP : Success to send the email to specified user ! ]\n");
 
@@ -119,12 +107,11 @@ public class Main_1_1
 		// 3: To : recipients.
 		message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiveMail, "Program", "UTF-8"));
 		// 4: Subject : The email theme.
-		message.setSubject("Java program", "UTF-8");
+		message.setSubject(MY_EMAIL_SUBJECT, "UTF-8");
 
 		/*
 		 * Create the content of the email as followed .
 		 */
-
 		// 5: Create the node of image.
 		MimeBodyPart image = new MimeBodyPart();
 		DataHandler dataHandler = new DataHandler(new FileDataSource("resource/Cute_pig.jpg"));// read the local file.
@@ -134,7 +121,7 @@ public class Main_1_1
 		// 6: Create the node of text.
 		MimeBodyPart text = new MimeBodyPart();
 		// You can actually add web images by HTTP links as well.
-		text.setContent("The image be showed as followed : <br/><img src='cid:image_Cut_pig_id'/>", "text/html;charset=UTF-8");
+		text.setContent(MY_EMAIL_CONTENT, "text/html;charset=UTF-8");
 
 		// 7: Combine text and image "nodes" into a hybrid "node".
 		MimeMultipart mm_text_image = new MimeMultipart();
@@ -142,10 +129,9 @@ public class Main_1_1
 		mm_text_image.addBodyPart(image);
 		mm_text_image.setSubType("related");// incidence relation.
 
-		/*
-		 * 8: Encapsulate the text + image hybrid "node" as a normal "node". Attention:
-		 * The "Content" that is eventually added to the emailis a Multipart composed of "bodyparts".
-		 */
+		// 8: Encapsulate the text + image hybrid "node" as a normal "node". Attention:
+		// The "Content" that is eventually added to the emailis a Multipart composed of
+		// "bodyparts".
 		MimeBodyPart text_image = new MimeBodyPart();
 		text_image.setContent(mm_text_image);
 
@@ -156,20 +142,15 @@ public class Main_1_1
 		// Set the file name of the attachment (encoding required).
 		attachment.setFileName(MimeUtility.encodeText(dataHandler2.getName()));
 
-		/*
-		 * 10: Set the relationship between ('text' + 'image') and the 'attachment'.
-		 * (compositing a large mixed "node"/Multipart).
-		 */
-
+		// 10: Set the relationship between ('text' + 'image') and the
+		// 'attachment'.(compositing a large mixed "node"/Multipart).
 		MimeMultipart mm_text_image_att = new MimeMultipart();
 		mm_text_image_att.addBodyPart(text_image);// reference: 8.
 		mm_text_image_att.addBodyPart(attachment);
 		mm_text_image_att.setSubType("mixed");// mixed relations.
 
-		/*
-		 * 11: Set the relationship for the entire email. (add the final mixed "node" as
-		 * the content of the email to the message object).
-		 */
+		// 11: Set the relationship for the entire email. (add the final mixed "node" as
+		// the content of the email to the message object).
 		message.setContent(mm_text_image_att);
 
 		// 12: Set the date.
