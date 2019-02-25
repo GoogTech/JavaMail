@@ -1,10 +1,20 @@
-reference : 
+
+------------------------------ favourite -------------------------------
+Java font : Lucida Console  
+
+
+------------------------------ reference -------------------------------
 	1:	http://www.runoob.com/java/java-sending-email.html
-	2:	https://blog.csdn.net/xietansheng/article/details/51673073 + https://blog.csdn.net/xietansheng/article/details/51722660
+	2:	https://blog.csdn.net/xietansheng/article/details/51673073 
+		https://blog.csdn.net/xietansheng/article/details/51722660
 	3:	https://www.cnblogs.com/ysocean/p/7666061.html
 	4:	https://blog.csdn.net/qq_32371887/article/details/72821291
 	
-xxx.properties: https://www.cnblogs.com/bakari/p/3562244.html
+		
+------------------------------ debug -----------------------------------
+	1:	Error... Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource..
+	1:	Solution : add the activation.jar
 	
-Error... Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource..
-Solution : add the activation.jar
+	
+
+
